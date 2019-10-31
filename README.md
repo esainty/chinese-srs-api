@@ -38,4 +38,4 @@ type HanziType {
 }
 ```
 
-For a complete API reference, see graphql/types/*
+For a complete API reference, see graphql/types/* or check out the GraphQL playground over at http://3.24.134.100:4000/
