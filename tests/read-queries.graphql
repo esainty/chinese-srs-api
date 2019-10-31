@@ -1,0 +1,107 @@
+{
+    user {
+        username
+        firstname
+        lastname
+        email
+        level
+        membership
+        learned_components {
+            component
+            meaning
+        }
+        learned_hanzi {
+            hanzi
+            meaning
+            reading
+        }
+    }
+
+    user(search: 1 on: ID) {
+        id
+        username
+        email
+    }
+
+    user(search: "esainty" on: USERNAME) {
+        id
+        username
+        email
+    }
+
+    user(search: "eden.sainty@gmail.com" on: EMAIL) {
+        id 
+        username
+        email
+    }
+
+    component {
+        id
+        level_accessed
+        component
+        name
+        meaning
+        mnemonic
+    }
+
+    component(search: [5] on: ID) {
+        id
+        component
+    }
+
+    component(search: [2] on: LEVEL) {
+        id
+        component
+        level
+    }
+
+    component(search: ["一"] on: COMPONENT) {
+        id
+        component
+    }
+
+    component(search: ["two", "one"] on: MEANING) {
+        id
+        meaning
+    }
+
+    hanzi {
+        id
+        level_accessed
+        hanzi
+        components {
+            component
+        }
+        meaning
+        reading
+        mnemonic
+    }
+
+    hanzi(search: [11, 6, 4] on: ID) {
+        id 
+        hanzi
+    }
+
+    hanzi(search: [2] on: LEVEL) {
+        id 
+        hanzi
+        level_accessed
+    }  
+
+    hanzi(search: ["口"] on: HANZI) {
+        id
+        hanzi
+    }  
+
+    hanzi(search: ["Yī"] on: READING) {
+        id
+        hanzi
+        reading
+    }
+
+    hanzi(search: ["mouth", "kill"] on: MEANING) {
+        id
+        hanzi
+        meaning
+    }
+}

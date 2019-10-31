@@ -1,0 +1,65 @@
+mutation {
+    updateUser(input: {
+        id: 23
+        username: "Phillius"
+        firstname: "Patrick"
+        lastname: "Norton"
+        email: "pnorton@live.com.au"
+        level: 6
+        membership: ADMIN
+    }) {
+    	user {
+            username
+            firstname
+            lastname
+            email
+            level
+            membership
+            learned_components {
+                component
+            }   
+            learned_hanzi {
+                hanzi
+            }     
+        }
+    }
+
+    updateComponent(input: {
+        id: 19
+        name: "Shí"
+        level_accessed: 3
+        component: "B"
+        meaning: "Test"
+        mnemonic: "Test mnemonic"
+    }) {
+        component {
+        id
+        name
+        level_accessed
+        component
+        meaning
+        mnemonic
+        }
+    }
+
+    updateHanzi(input: {
+        id: 12
+        level_accessed: 7
+        hanzi: "C"
+        meaning: "TestHanzi"
+        reading: "diacritics"
+        mnemonic: "Test mnemonic for hanzi"
+    }) {
+        hanzi {
+        id
+        level_accessed
+        hanzi
+        components {
+            component
+        }
+        meaning
+        reading
+        mnemonic
+        }
+    }
+}

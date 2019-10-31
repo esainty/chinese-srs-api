@@ -1,0 +1,91 @@
+  createUser(input: {
+    username: "Phlebitis"
+    firstname: "John"
+    lastname: "Walker"
+    email: "johnnyw@hotmail.com"
+    level: 1
+    membership: NONE
+  }) {
+    user {
+      username
+      firstname
+      lastname
+      email
+      level
+      membership
+      learned_hanzi {
+        hanzi
+      }
+      learned_components {
+        component
+      }
+    }
+  }
+
+  createComponent(input: {
+    component: "大"
+    name: "Dà"
+    meaning: "Big"
+    level_accessed: 4
+    mnemonic: "A person with big arms"
+  }) {
+    component {
+      component
+      name
+      meaning
+      level_accessed
+      mnemonic
+    }
+  }
+  
+  createHanzi(input: {
+    level_accessed: 4
+    hanzi: "大"
+    reading: "Dà"
+    meaning: "Big"
+    components: [26]
+    mnemonic: "Reading and meaning same as component"
+  }) {
+    hanzi {
+      level_accessed
+      hanzi
+      meaning
+      reading
+      components {
+        component
+      }
+      mnemonic
+    }
+  }
+
+  addUserComponents(input: {
+    user_id: 24
+    components: [
+      1, 2, 3, 4, 5
+    ]
+  }) {
+    components {
+      id, 
+      component
+    }
+  }
+
+  addUserHanzi(input: {
+    user_id: 23
+    hanzi: [1, 2, 3, 4, 5, 6]
+  }) {
+    hanzi {
+      id
+      hanzi
+    }
+  }
+
+  addHanziComponents(input: {
+    hanzi_id: 16
+    components: [9, 1]
+  }) {
+    components {
+      id
+      component
+    }
+  }

@@ -1,0 +1,28 @@
+mutation {
+    deleteUser(input: {
+        id: 28
+    }) {
+        user {
+            id
+            username
+        }
+    }
+
+    deleteComponent(input: {
+        id: 23
+    }) {
+        component {
+            id
+            component
+        }
+    }
+
+    deleteHanzi(input: {
+        id: 14
+    }) {
+        hanzi {
+            id
+            hanzi
+        }
+    }
+}
